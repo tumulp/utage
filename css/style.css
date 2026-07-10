@@ -348,6 +348,14 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.03em;
   color: var(--ink);
 }
+.pain__photo {
+  margin: 0 0 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(28,22,17,0.12);
+}
+.pain__photo img { width: 100%; display: block; }
+
 .pain__pull {
   margin: 72px 0 0;
   text-align: center;

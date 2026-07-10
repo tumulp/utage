@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>申し込み完了 | 美容師の駆け込み寺</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .thanks {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 32px;
+      background: var(--bg);
+    }
+    .thanks__inner { max-width: 560px; }
+    .thanks__icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+    .thanks__title {
+      font-family: var(--serif);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin: 0 0 16px;
+    }
+    .thanks__sub {
+      font-size: 15px;
+      line-height: 2;
+      color: var(--ink-2);
+      margin: 0 0 32px;
+    }
+    .thanks__redirect {
+      font-size: 14px;
+      color: var(--ink-mute);
+      margin-bottom: 24px;
+    }
+    .thanks__progress {
+      width: 200px;
+      height: 3px;
+      background: var(--line);
+      border-radius: 2px;
+      margin: 12px auto 0;
+      overflow: hidden;
+    }
+    .thanks__progress-bar {
+      height: 100%;
+      background: #06c755;
+      border-radius: 2px;
+      animation: progress 3s linear forwards;
+    }
+    @keyframes progress {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+    .thanks__line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06c755;
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-bottom: 16px;
+    }
+    .thanks__line:hover { opacity: 0.85; }
+    .thanks__note {
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+    .thanks__back {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--ink-mute);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="thanks">
+    <div class="thanks__inner">
+      <div class="thanks__icon">🍵</div>
+      <h1 class="thanks__title">申し込みありがとうございます。</h1>
+      <p class="thanks__sub">
+        お申し込みを受け付けました。<br>
+        続けてLINEの友だち追加をお願いします。<br>
+        グループLINEのご案内をお送りします。
+      </p>
+      <p class="thanks__redirect">
+        3秒後に自動でLINEへ移動します…
+        <span class="thanks__progress"><span class="thanks__progress-bar"></span></span>
+      </p>
+      <a href="https://s.lmes.jp/landing-qr/2010138465-7cHKnN3m?uLand=dBmBNZ" id="lineBtn" class="thanks__line">
+        LINEで友だち追加する →
+      </a>
+      <p class="thanks__note">※ タップするとLINEアプリが開きます</p>
+      <a href="index.html" class="thanks__back">トップページに戻る</a>
+    </div>
+  </div>
+  <script>
+    setTimeout(function () {
+      window.location.href = 'https://s.lmes.jp/landing-qr/2010138465-7cHKnN3m?uLand=dBmBNZ';
+    }, 3000);
+  </script>
+</body>
+</html>

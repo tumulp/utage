@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ochakai-lp",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3800", "."],
+      "port": 3800
+    }
+  ]
+}

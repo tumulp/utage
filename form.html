@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>宴 申し込みフォーム | 美容師の駆け込み寺</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: var(--bg); margin: 0; }
+    .form-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 0 0;
+    }
+    .form-page__head {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 0 32px;
+    }
+    .form-page__eyebrow {
+      font-family: var(--en);
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--green);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .form-page__title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin: 0 0 10px;
+    }
+    .form-page__sub {
+      font-size: 14px;
+      color: var(--ink-mute);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .form-iframe-wrap {
+      width: 100%;
+      max-width: 640px;
+      flex: 1;
+    }
+    .form-iframe-wrap iframe {
+      width: 100%;
+      min-height: 640px;
+      border: none;
+      display: block;
+    }
+    .form-back {
+      display: inline-block;
+      padding: 24px 0 32px;
+      font-size: 13px;
+      color: var(--ink-mute);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      margin: 24px 0 40px;
+    }
+    @media (max-width: 600px) {
+      .form-page { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-page">
+    <div class="form-page__head">
+      <span class="form-page__eyebrow">Apply</span>
+      <h1 class="form-page__title">宴 申し込みフォーム</h1>
+      <p class="form-page__sub">8月24日（月）19:00〜 名古屋開催<br>定員15名まで / 参加費無料（飲食代のみ）</p>
+    </div>
+
+    <div class="form-iframe-wrap">
+      <iframe
+        id="gform"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScOuykWb3WQWfO_5yzW9Me-CJXqF7A9h5lWur5GmdI6fBuDRQ/viewform?embedded=true"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >読み込んでいます…</iframe>
+    </div>
+
+    <a href="index.html" class="form-back">← トップページに戻る</a>
+  </div>
+
+  <script>
+    // Googleフォーム送信後（iframeが2回目のloadを検知）→ LINEへ自動移動
+    var loadCount = 0;
+    var iframe = document.getElementById('gform');
+    iframe.addEventListener('load', function () {
+      loadCount++;
+      if (loadCount >= 2) {
+        // 送信完了 → thanks.html 経由でLINEへ
+        window.location.href = 'thanks.html';
+      }
+    });
+  </script>
+</body>
+</html>
